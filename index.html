@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#D4AA7D" />
-  <title>TechnoVolley '26 — Prijava na odbojkarski turnir</title>
-  <meta name="description" content="TechnoVolley '26 — turnir odbojke na mivki. 22. avgust, Športni park Budanje. Organizator: Planet Circle." />
-  <meta property="og:title" content="TechnoVolley '26 — Prijava na turnir" />
+  <title>TechnoVolley '26 — Prijava</title>
+  <meta name="description" content="TechnoVolley '26 — turnir odbojke na mivki. 22. avgust, Športni park Budanje. Prijavi svojo ekipo." />
+  <meta property="og:title" content="TechnoVolley '26 — Prijava" />
   <meta property="og:description" content="Turnir odbojke na mivki. 22. avgust — Športni park Budanje. Prijavi svojo ekipo!" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23272727'/%3E%3Ccircle cx='50' cy='47' r='22' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3Cellipse cx='50' cy='54' rx='38' ry='10' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3C/svg%3E" />
@@ -15,143 +15,105 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --sand:#D4AA7D;      /* Sandy Clay */
-      --grey:#272727;      /* Shadow Grey */
-      --paper:#F2EAD9;     /* warm off-white */
-      --line:rgba(39,39,39,.18);
-      --line-inv:rgba(212,170,125,.28);
-      --maxw:1180px;
+      --sand:#D4AA7D;
+      --grey:#272727;
+      --paper:#F2EAD9;
+      --line:rgba(39,39,39,.22);
+      --maxw:1200px;
     }
     *{box-sizing:border-box; margin:0; padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:"Archivo", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-      background:var(--sand);
-      color:var(--grey);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.5;
+      background:var(--sand); color:var(--grey);
+      -webkit-font-smoothing:antialiased; line-height:1.5;
+      min-height:100svh; display:flex; flex-direction:column;
     }
-    .display{font-family:"Archivo Black", "Archivo", sans-serif; font-weight:400}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px; width:100%}
     a{color:inherit}
 
-    /* ── Nav ─────────────────────────── */
+    /* ── Nav ── */
     nav{border-bottom:1px solid var(--line)}
-    .nav-in{display:flex; align-items:center; gap:12px; padding:16px 0}
-    .nav-in img{width:42px; height:42px; border-radius:50%; background:#fff; border:1px solid var(--line); object-fit:cover}
-    .nav-name{font-weight:700; font-size:15px; letter-spacing:-.01em}
-    .nav-links{margin-left:auto; display:flex; align-items:center; gap:20px}
+    .nav-in{display:flex; align-items:center; gap:12px; padding:14px 0}
+    .nav-in img{width:40px; height:40px; border-radius:50%; background:#fff; border:1px solid var(--line); object-fit:cover}
+    .nav-name{font-weight:700; font-size:15px}
+    .nav-right{margin-left:auto; display:flex; align-items:center; gap:18px}
     .nav-ig{font-weight:600; font-size:14px; text-decoration:none; opacity:.85}
     .nav-ig:hover{opacity:1; text-decoration:underline; text-underline-offset:4px}
-    .pill{display:inline-block; background:var(--grey); color:var(--sand); text-decoration:none;
-      font-weight:700; font-size:14px; padding:11px 22px; border-radius:999px; transition:transform .15s}
-    .pill:hover{transform:scale(1.04)}
-
-    /* ── Hero ────────────────────────── */
-    .hero{padding:72px 0 64px; position:relative; overflow:hidden}
-    .eyebrow{font-size:13px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; margin-bottom:28px}
-    h1{font-size:clamp(64px, 14vw, 190px); line-height:.88; letter-spacing:-.015em; text-transform:uppercase}
-    h1 .row{display:block}
-    h1 .outline{color:transparent; -webkit-text-stroke:2.5px var(--grey); text-stroke:2.5px var(--grey)}
-    .hero-foot{display:flex; align-items:flex-end; gap:40px; margin-top:44px; flex-wrap:wrap}
-    .hero-sub{max-width:340px; font-size:17px; font-weight:500; line-height:1.55}
-    .hero-cta{display:inline-flex; align-items:center; gap:12px; background:var(--grey); color:var(--sand);
-      text-decoration:none; font-weight:700; font-size:17px; padding:18px 34px; border-radius:999px; transition:transform .15s}
-    .hero-cta:hover{transform:scale(1.04)}
-    .hero-cta .arr{transition:transform .2s}
-    .hero-cta:hover .arr{transform:translateX(4px)}
-    .hero-open{font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; display:flex; align-items:center; gap:8px}
-    .dot{width:9px; height:9px; border-radius:50%; background:var(--grey); animation:blink 1.6s ease-in-out infinite}
+    .status{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; display:flex; align-items:center; gap:8px}
+    .dot{width:8px; height:8px; border-radius:50%; background:var(--grey); animation:blink 1.6s ease-in-out infinite}
     @keyframes blink{50%{opacity:.25}}
 
-    /* volleyball line art */
-    .ball{position:absolute; right:-140px; top:40px; width:min(46vw,520px); height:auto; opacity:.9;
-      animation:spin 60s linear infinite; pointer-events:none}
-    @keyframes spin{to{transform:rotate(360deg)}}
+    /* ── Main split ── */
+    main{flex:1; display:flex; align-items:center; padding:40px 0 48px}
+    .split{display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(36px,5vw,72px); align-items:center}
 
-    /* ── Ticker ──────────────────────── */
-    .ticker{background:var(--grey); color:var(--sand); overflow:hidden; white-space:nowrap; border-block:1px solid var(--grey)}
-    .ticker-track{display:inline-flex; padding:14px 0; animation:marquee 28s linear infinite}
-    .ticker span{font-family:"Archivo Black",sans-serif; font-size:15px; letter-spacing:.12em; text-transform:uppercase; padding:0 18px}
-    @keyframes marquee{to{transform:translateX(-50%)}}
+    .eyebrow{font-size:12px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; margin-bottom:18px}
+    h1{font-family:"Archivo Black",sans-serif; font-weight:400; text-transform:uppercase;
+      font-size:clamp(52px, 7.2vw, 104px); line-height:.9; letter-spacing:-.015em; margin-bottom:26px}
+    h1 span{display:block}
+    h1 .outline{color:transparent; -webkit-text-stroke:2.5px var(--grey)}
 
-    /* ── Info (paper) ────────────────── */
-    .info{background:var(--paper); padding:96px 0}
-    .kicker{font-size:13px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; margin-bottom:56px}
-    .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line)}
-    .fact{padding:36px 28px 44px; border-bottom:1px solid var(--line)}
-    .fact + .fact{border-left:1px solid var(--line)}
-    .fact .num{font-family:"Archivo Black",sans-serif; font-size:15px; margin-bottom:26px; color:var(--grey); opacity:.45}
-    .fact h3{font-family:"Archivo Black",sans-serif; font-size:26px; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:12px}
-    .fact p{font-size:16px; font-weight:500; opacity:.75; max-width:26ch}
+    .facts{border-top:1px solid var(--line); margin-bottom:18px}
+    .frow{display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:11px 2px; border-bottom:1px solid var(--line)}
+    .frow .k{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; opacity:.6}
+    .frow .v{font-weight:700; font-size:16px; text-align:right}
+    .cd-line{font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; opacity:.75}
+    .cd-line b{font-variant-numeric:tabular-nums}
 
-    /* ── Countdown (grey) ────────────── */
-    .count{background:var(--grey); color:var(--sand); padding:96px 0; text-align:center}
-    .count .kicker{margin-bottom:40px}
-    .cd{display:flex; justify-content:center; align-items:baseline; gap:clamp(10px,3vw,34px); flex-wrap:wrap}
-    .cd .n{font-family:"Archivo Black",sans-serif; font-size:clamp(58px,11vw,150px); line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-    .cd .l{display:block; font-family:"Archivo",sans-serif; font-size:12px; font-weight:600; letter-spacing:.3em; text-transform:uppercase; margin-top:14px; opacity:.6}
-    .cd .sep{font-family:"Archivo Black",sans-serif; font-size:clamp(40px,8vw,110px); opacity:.35; transform:translateY(-8px)}
-    .cd-live{font-family:"Archivo Black",sans-serif; font-size:clamp(30px,6vw,64px); text-transform:uppercase}
+    /* line-art scene: net + ball + planet sun */
+    .scene{margin-top:30px; width:100%; max-width:520px; height:auto; display:block}
+    .scene .ball-fly{animation:fly 3.4s ease-in-out infinite}
+    @keyframes fly{50%{transform:translateY(-14px)}}
 
-    /* ── Form (sand) ─────────────────── */
-    .reg{padding:96px 0 110px}
-    .reg-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:start}
-    .reg h2{font-family:"Archivo Black",sans-serif; font-size:clamp(40px,6vw,72px); line-height:.95; text-transform:uppercase; letter-spacing:-.015em; margin:18px 0 22px}
-    .reg-side p{font-size:17px; font-weight:500; max-width:36ch; opacity:.8}
-    .reg-side .ring{margin-top:44px; width:120px; height:auto; opacity:.85}
-
-    form{border:1px solid var(--grey); border-radius:20px; padding:36px; background:var(--sand)}
-    .field{margin-bottom:26px}
-    label{display:block; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:10px}
+    /* ── Form ── */
+    .panel{background:var(--paper); border:1px solid var(--grey); border-radius:22px; padding:30px 30px 26px}
+    .panel h2{font-family:"Archivo Black",sans-serif; font-weight:400; font-size:24px; text-transform:uppercase; margin-bottom:4px}
+    .panel .sub{font-size:14px; font-weight:500; opacity:.7; margin-bottom:22px}
+    .field{margin-bottom:20px}
+    label{display:block; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:7px}
     input[type=text], input[type=email], input[type=tel]{
       width:100%; background:transparent; border:none; border-bottom:2px solid var(--grey);
-      padding:8px 2px 12px; font-size:19px; font-weight:600; font-family:inherit; color:var(--grey); border-radius:0}
-    input::placeholder{color:rgba(39,39,39,.38)}
+      padding:6px 2px 10px; font-size:18px; font-weight:600; font-family:inherit; color:var(--grey); border-radius:0}
+    input::placeholder{color:rgba(39,39,39,.35)}
     input:focus{outline:none; border-bottom-color:#000}
-    .check{display:flex; gap:12px; align-items:flex-start; margin:32px 0 8px}
-    .check input{width:19px; height:19px; margin-top:2px; accent-color:var(--grey); flex:0 0 auto}
-    .check label{font-size:14px; font-weight:500; letter-spacing:0; text-transform:none; margin:0; line-height:1.5}
-    .btn{width:100%; margin-top:18px; background:var(--grey); color:var(--sand); border:none; cursor:pointer;
-      font-family:"Archivo Black",sans-serif; font-size:17px; letter-spacing:.04em; text-transform:uppercase;
-      padding:20px; border-radius:999px; transition:transform .15s}
+    .check{display:flex; gap:11px; align-items:flex-start; margin:24px 0 6px}
+    .check input{width:18px; height:18px; margin-top:2px; accent-color:var(--grey); flex:0 0 auto}
+    .check label{font-size:13px; font-weight:500; letter-spacing:0; text-transform:none; margin:0; line-height:1.5}
+    .btn{width:100%; margin-top:16px; background:var(--grey); color:var(--sand); border:none; cursor:pointer;
+      font-family:"Archivo Black",sans-serif; font-size:16px; letter-spacing:.04em; text-transform:uppercase;
+      padding:18px; border-radius:999px; transition:transform .15s}
     .btn:hover{transform:scale(1.02)}
     .btn[disabled]{opacity:.6; cursor:not-allowed; transform:none}
-    .msg{display:none; margin-top:22px; border:1px solid var(--grey); border-radius:14px; padding:18px 20px; font-size:15px; font-weight:600}
-    .msg.err{background:#3a1414; color:#f2c6c6; border-color:#3a1414}
+    .msg{display:none; margin-top:18px; border-radius:14px; padding:18px 20px; font-size:15px; font-weight:600}
     .msg.ok{background:var(--grey); color:var(--sand)}
+    .msg.err{background:#3a1414; color:#f2c6c6}
 
-    /* ── Footer ──────────────────────── */
-    footer{background:var(--grey); color:var(--sand); padding:56px 0}
-    .foot-in{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
-    .foot-in img{width:44px; height:44px; border-radius:50%; background:#fff}
-    .foot-brand{font-family:"Archivo Black",sans-serif; font-size:16px; text-transform:uppercase; letter-spacing:.04em}
-    .foot-right{margin-left:auto; display:flex; gap:24px; align-items:center; font-size:14px; font-weight:600}
-    .foot-right a{text-decoration:none; opacity:.85}
-    .foot-right a:hover{opacity:1; text-decoration:underline; text-underline-offset:4px}
-    .foot-copy{opacity:.55}
+    /* ── Bottom strip ── */
+    .strip{background:var(--grey); color:var(--sand)}
+    .ticker{overflow:hidden; white-space:nowrap; padding:12px 0; border-bottom:1px solid rgba(212,170,125,.25)}
+    .ticker-track{display:inline-flex; animation:marquee 28s linear infinite}
+    .ticker span{font-family:"Archivo Black",sans-serif; font-size:13px; letter-spacing:.12em; text-transform:uppercase; padding:0 16px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .foot{display:flex; align-items:center; gap:16px; padding:14px 0; font-size:13px; font-weight:600}
+    .foot a{text-decoration:none; opacity:.85}
+    .foot a:hover{opacity:1; text-decoration:underline; text-underline-offset:4px}
+    .foot .copy{margin-left:auto; opacity:.55}
 
     .hp{position:absolute!important; left:-9999px!important; width:1px!important; height:1px!important; overflow:hidden!important}
     a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--grey); outline-offset:3px}
-    .count a:focus-visible, footer a:focus-visible{outline-color:var(--sand)}
+    .strip a:focus-visible{outline-color:var(--sand)}
 
     @media (prefers-reduced-motion: reduce){
-      .ball, .ticker-track, .dot{animation:none}
+      .ticker-track, .dot, .scene .ball-fly{animation:none}
     }
-    @media (max-width:900px){
-      .ball{right:-30vw; top:auto; bottom:-60px; width:74vw; opacity:.4}
-      .reg-grid{grid-template-columns:1fr; gap:40px}
-      .reg-side .ring{display:none}
-    }
-    @media (max-width:700px){
-      .facts{grid-template-columns:1fr}
-      .fact + .fact{border-left:none}
-    }
-    @media (max-width:560px){
-      .hero{padding:56px 0 48px}
-      .nav-ig{display:none}
-      form{padding:26px 20px}
-      .hero-foot{gap:26px}
+    @media (max-width:920px){
+      main{padding:32px 0 40px; align-items:flex-start}
+      .split{grid-template-columns:1fr; gap:30px}
+      h1{font-size:clamp(48px, 13vw, 84px); margin-bottom:20px}
+      .scene{display:none}
+      .status{display:none}
+      .panel{padding:24px 20px 22px}
     }
   </style>
 </head>
@@ -159,89 +121,78 @@
 
   <nav>
     <div class="container nav-in">
-      <img id="navLogo" src="img/planet-circle.jpg" alt="Planet Circle logo" />
-      <span class="nav-name" id="navName">planetcircle__</span>
-      <div class="nav-links">
+      <img src="img/planet-circle.jpg" alt="Planet Circle logo" />
+      <span class="nav-name">planetcircle__</span>
+      <div class="nav-right">
+        <span class="status"><span class="dot"></span> Prijave odprte</span>
         <a class="nav-ig" id="igLinkTop" href="#" target="_blank" rel="noopener">Instagram ↗</a>
-        <a class="pill" href="#prijava">Prijava</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <!-- volleyball line art -->
-    <svg class="ball" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="100" cy="100" r="97" stroke="#272727" stroke-width="2.5"/>
-      <path d="M100 3c0 64-43 118-97 134" stroke="#272727" stroke-width="2.5"/>
-      <path d="M100 3c0 64 43 118 97 134" stroke="#272727" stroke-width="2.5"/>
-      <path d="M6 74c56 22 132 22 188 0" stroke="#272727" stroke-width="2.5"/>
-      <path d="M100 3v66" stroke="#272727" stroke-width="2.5"/>
-    </svg>
+  <main>
+    <div class="container split">
 
-    <div class="container">
-      <p class="eyebrow">Planet Circle predstavlja</p>
-      <h1 class="display">
-        <span class="row">Techno</span>
-        <span class="row">Volley</span>
-        <span class="row outline" id="yearBig">'26</span>
-      </h1>
-      <div class="hero-foot">
-        <p class="hero-sub">Turnir odbojke na mivki. Zberi ekipo in se nam pridruži na najbolj vročem dogodku poletja.</p>
-        <a class="hero-cta" href="#prijava">Prijavi ekipo <span class="arr">→</span></a>
-        <span class="hero-open"><span class="dot"></span> Prijave odprte</span>
-      </div>
-    </div>
-  </header>
+      <div class="intro">
+        <p class="eyebrow">Planet Circle predstavlja</p>
+        <h1>
+          <span>Techno</span>
+          <span>Volley <em class="outline" style="font-style:normal" id="yearBig">'26</em></span>
+        </h1>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track" id="tickerTrack"></div>
-  </div>
-
-  <section class="info">
-    <div class="container">
-      <p class="kicker">Vse, kar moraš vedeti</p>
-      <div class="facts">
-        <div class="fact">
-          <div class="num">01</div>
-          <h3 id="factDate">22. avgust 2026</h3>
-          <p>Sobota. Začetek ob 9.00 — pridi vsaj pol ure prej.</p>
+        <div class="facts">
+          <div class="frow"><span class="k">Datum</span><span class="v" id="factDate">22. avgust 2026 · 9.00</span></div>
+          <div class="frow"><span class="k">Lokacija</span><span class="v" id="factLoc">Športni park Budanje · mivka</span></div>
+          <div class="frow"><span class="k">Prijavnina</span><span class="v" id="factFee">30 € na ekipo</span></div>
         </div>
-        <div class="fact">
-          <div class="num">02</div>
-          <h3 id="factLoc">Športni park Budanje</h3>
-          <p>Igrišče za odbojko na mivki. Parkirišče ob parku.</p>
-        </div>
-        <div class="fact">
-          <div class="num">03</div>
-          <h3 id="factFee">30 € na ekipo</h3>
-          <p>Navodila za plačilo prijavnine prejmeš na e‑pošto po prijavi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <p class="cd-line">Do prvega servisa še <b id="cdText">—</b></p>
 
-  <section class="count">
-    <div class="container">
-      <p class="kicker">Do prvega servisa</p>
-      <div class="cd" id="countdown"></div>
-    </div>
-  </section>
-
-  <section class="reg" id="prijava">
-    <div class="container reg-grid">
-      <div class="reg-side">
-        <p class="kicker" style="margin-bottom:0">Prijava</p>
-        <h2>Prijavi svojo ekipo</h2>
-        <p>Izpolni obrazec — po oddaji ti na e‑pošto pošljemo potrditev in navodila za plačilo prijavnine.</p>
-        <!-- planet ring motif -->
-        <svg class="ring" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="60" cy="38" r="26" stroke="#272727" stroke-width="2.5"/>
-          <ellipse cx="60" cy="44" rx="54" ry="14" stroke="#272727" stroke-width="2.5"/>
+        <!-- Beach scene: net, flying ball, planet-ring sun -->
+        <svg class="scene" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g stroke="#272727" stroke-width="2.4">
+            <!-- planet-ring sun -->
+            <circle cx="64" cy="52" r="26"/>
+            <ellipse cx="64" cy="58" rx="48" ry="12"/>
+            <!-- net posts -->
+            <line x1="150" y1="70" x2="150" y2="212"/>
+            <line x1="470" y1="70" x2="470" y2="212"/>
+            <!-- net mesh -->
+            <g opacity=".85">
+              <line x1="150" y1="78"  x2="470" y2="78"/>
+              <line x1="150" y1="96"  x2="470" y2="96"/>
+              <line x1="150" y1="114" x2="470" y2="114"/>
+              <line x1="150" y1="132" x2="470" y2="132"/>
+              <line x1="190" y1="70" x2="190" y2="140"/>
+              <line x1="230" y1="70" x2="230" y2="140"/>
+              <line x1="270" y1="70" x2="270" y2="140"/>
+              <line x1="310" y1="70" x2="310" y2="140"/>
+              <line x1="350" y1="70" x2="350" y2="140"/>
+              <line x1="390" y1="70" x2="390" y2="140"/>
+              <line x1="430" y1="70" x2="430" y2="140"/>
+            </g>
+            <!-- top band of net -->
+            <line x1="150" y1="70" x2="470" y2="70" stroke-width="5"/>
+            <!-- sand -->
+            <path d="M10 212 Q 130 200 260 212 T 512 212" stroke-width="2.4"/>
+            <path d="M60 226 Q 160 218 260 226 T 460 226" opacity=".5"/>
+          </g>
+          <!-- volleyball above the net -->
+          <g class="ball-fly">
+            <g stroke="#272727" stroke-width="2.4" fill="none">
+              <circle cx="330" cy="34" r="24"/>
+              <path d="M306 34 q 24 -12 48 0"/>
+              <path d="M312 18 q 12 20 6 38"/>
+              <path d="M348 18 q -12 20 -6 38"/>
+            </g>
+          </g>
         </svg>
       </div>
 
       <div>
-        <form id="regForm" action="https://formspree.io/f/mblynnep" method="POST">
+        <form id="regForm" action="https://formspree.io/f/mblynnep" method="POST" class="panel">
+          <h2>Prijava ekipe</h2>
+          <p class="sub">Po oddaji prejmeš potrditev in navodila za plačilo na e‑pošto.</p>
+
           <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <input type="hidden" name="_subject" value="Prijava na turnir — TechnoVolley '26" />
 
@@ -270,19 +221,18 @@
         <div class="msg ok" id="okMsg">Hvala za prijavo! ✅ V kratkem boste na e‑pošto prejeli potrditev in navodila za plačilo prijavnine. Se vidimo na mivki!</div>
         <div class="msg err" id="errMsg">Pri oddaji je prišlo do napake. Poskusite znova ali nam pišite na Instagramu.</div>
       </div>
-    </div>
-  </section>
 
-  <footer>
-    <div class="container foot-in">
-      <img src="img/planet-circle.jpg" alt="" />
-      <span class="foot-brand">Planet Circle</span>
-      <div class="foot-right">
-        <a id="igLinkFoot" href="#" target="_blank" rel="noopener">Instagram ↗</a>
-        <span class="foot-copy">© <span id="year">2026</span> Planet Circle</span>
-      </div>
     </div>
-  </footer>
+  </main>
+
+  <div class="strip">
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
+    <div class="container foot">
+      <span>Planet Circle</span>
+      <a id="igLinkFoot" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+      <span class="copy">© <span id="year">2026</span> Planet Circle</span>
+    </div>
+  </div>
 
   <script>
     /* ─────────────────────────────────────────────
@@ -290,8 +240,8 @@
        ───────────────────────────────────────────── */
     const CONFIG = {
       eventDateISO: "2026-08-22T09:00:00+02:00",
-      dateLabel:    "22. avgust 2026",
-      location:     "Športni park Budanje",
+      dateLabel:    "22. avgust 2026 · 9.00",
+      location:     "Športni park Budanje · mivka",
       fee:          "30 € na ekipo",
       yearShort:    "'26",
       instagram:    "https://www.instagram.com/planetcircle__/",
@@ -308,29 +258,20 @@
       document.getElementById("yearBig").textContent = CONFIG.yearShort;
       document.getElementById("year").textContent = new Date(CONFIG.eventDateISO).getFullYear();
 
-      // Ticker: build one sequence, duplicate for seamless loop
       const seq = CONFIG.ticker.map(t => `<span>${t}</span><span>✦</span>`).join("");
       document.getElementById("tickerTrack").innerHTML = seq + seq;
 
-      // Countdown
-      const cdEl = document.getElementById("countdown");
+      // Compact countdown line
+      const cdText = document.getElementById("cdText");
       const target = new Date(CONFIG.eventDateISO).getTime();
-      const labels = ["dni","ur","min","sek"];
       function render(){
         const diff = target - Date.now();
-        if (diff <= 0){ cdEl.innerHTML = '<div class="cd-live">Turnir je v teku 🏐</div>'; return true; }
-        const v = [
-          Math.floor(diff/864e5),
-          Math.floor(diff/36e5)%24,
-          Math.floor(diff/6e4)%60,
-          Math.floor(diff/1e3)%60
-        ];
-        cdEl.innerHTML = v.map((n,i)=>
-          `<div><span class="n">${String(n).padStart(2,"0")}</span><span class="l">${labels[i]}</span></div>${i<3?'<span class="sep">:</span>':''}`
-        ).join("");
+        if (diff <= 0){ cdText.textContent = "0 — turnir je v teku! 🏐"; return true; }
+        const d = Math.floor(diff/864e5), h = Math.floor(diff/36e5)%24, m = Math.floor(diff/6e4)%60;
+        cdText.textContent = `${d} dni ${h} ur ${m} min`;
         return false;
       }
-      if(!render()){ const t = setInterval(()=>{ if(render()) clearInterval(t); }, 1000); }
+      if(!render()){ const t = setInterval(()=>{ if(render()) clearInterval(t); }, 30000); }
 
       // Form submit (Formspree AJAX)
       const form = document.getElementById("regForm");
