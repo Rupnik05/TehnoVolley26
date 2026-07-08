@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#D4AA7D" />
+  <meta name="theme-color" content="#A4D8FF" />
   <title>TechnoVolley '26 — Prijava</title>
   <meta name="description" content="TechnoVolley '26 — turnir odbojke na mivki. 22. avgust, Športni park Budanje. Prijavi svojo ekipo." />
   <meta property="og:title" content="TechnoVolley '26 — Prijava" />
   <meta property="og:description" content="Turnir odbojke na mivki. 22. avgust — Športni park Budanje. Prijavi svojo ekipo!" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23272727'/%3E%3Ccircle cx='50' cy='47' r='22' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3Cellipse cx='50' cy='54' rx='38' ry='10' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2335393C'/%3E%3Ccircle cx='50' cy='47' r='22' fill='none' stroke='%23A4D8FF' stroke-width='6'/%3E%3Cellipse cx='50' cy='54' rx='38' ry='10' fill='none' stroke='%23A4D8FF' stroke-width='6'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --sand:#D4AA7D;
-      --grey:#272727;
-      --paper:#F2EAD9;
-      --line:rgba(39,39,39,.22);
+      --sand:#A4D8FF;            /* Icy Blue */
+      --grey:#35393C;            /* Gunmetal */
+      --paper:#EDF6FF;           /* icy paper */
+      --line:rgba(53,57,60,.22);
       --maxw:1200px;
     }
     *{box-sizing:border-box; margin:0; padding:0}
@@ -63,8 +63,9 @@
 
     /* line-art scene: net + ball + planet sun */
     .scene{margin-top:30px; width:100%; max-width:520px; height:auto; display:block}
+    .scene{overflow:visible}
     .scene .ball-fly{animation:fly 3.4s ease-in-out infinite}
-    @keyframes fly{50%{transform:translateY(-14px)}}
+    @keyframes fly{50%{transform:translateY(-12px)}}
 
     /* ── Form ── */
     .panel{background:var(--paper); border:1px solid var(--grey); border-radius:22px; padding:30px 30px 26px}
@@ -91,7 +92,7 @@
 
     /* ── Bottom strip ── */
     .strip{background:var(--grey); color:var(--sand)}
-    .ticker{overflow:hidden; white-space:nowrap; padding:12px 0; border-bottom:1px solid rgba(212,170,125,.25)}
+    .ticker{overflow:hidden; white-space:nowrap; padding:12px 0; border-bottom:1px solid rgba(164,216,255,.25)}
     .ticker-track{display:inline-flex; animation:marquee 28s linear infinite}
     .ticker span{font-family:"Archivo Black",sans-serif; font-size:13px; letter-spacing:.12em; text-transform:uppercase; padding:0 16px}
     @keyframes marquee{to{transform:translateX(-50%)}}
@@ -149,7 +150,7 @@
 
         <!-- Beach scene: net, flying ball, planet-ring sun -->
         <svg class="scene" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g stroke="#272727" stroke-width="2.4">
+          <g stroke="#35393C" stroke-width="2.4">
             <!-- planet-ring sun -->
             <circle cx="64" cy="52" r="26"/>
             <ellipse cx="64" cy="58" rx="48" ry="12"/>
@@ -178,11 +179,11 @@
           </g>
           <!-- volleyball above the net -->
           <g class="ball-fly">
-            <g stroke="#272727" stroke-width="2.4" fill="none">
-              <circle cx="330" cy="34" r="24"/>
-              <path d="M306 34 q 24 -12 48 0"/>
-              <path d="M312 18 q 12 20 6 38"/>
-              <path d="M348 18 q -12 20 -6 38"/>
+            <g stroke="#35393C" stroke-width="2.4" fill="none">
+              <circle cx="330" cy="40" r="24"/>
+              <path d="M306 40 q 24 -12 48 0"/>
+              <path d="M312 24 q 12 20 6 38"/>
+              <path d="M348 24 q -12 20 -6 38"/>
             </g>
           </g>
         </svg>
