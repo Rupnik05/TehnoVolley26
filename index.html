@@ -3,33 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0C0C0E" />
   <title>TechnoVolley '26 — Prijava na odbojkarski turnir</title>
   <meta name="description" content="Prijava na TechnoVolley '26 — odbojkarski turnir na mivki. Organizator: Planet Circle." />
   <meta property="og:title" content="TechnoVolley '26 — Prijava na turnir" />
   <meta property="og:description" content="Odbojkarski turnir na mivki. Prijavi svojo ekipo!" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234676B6'/%3E%3Ccircle cx='50' cy='50' r='27' fill='none' stroke='%23E6E7DB' stroke-width='6'/%3E%3Cpath d='M50 23 A27 27 0 0 1 50 77' stroke='%23E6E7DB' stroke-width='6' fill='none'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230C0C0E'/%3E%3Ccircle cx='50' cy='48' r='23' fill='none' stroke='%23F4BC24' stroke-width='7'/%3E%3Cellipse cx='50' cy='55' rx='40' ry='11' fill='none' stroke='%23F4BC24' stroke-width='7'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --blue:#4676B6;
-      --blue-deep:#2E4F7E;
-      --blue-bright:#5B93DC;
-      --accent:#FDD365;        /* warm sand/gold */
-      --text:#E9EEF6;          /* text on blue */
-      --text-dim:rgba(233,238,246,.72);
+      /* Planet Circle brand palette (sampled from logo) */
+      --gold:#F4BC24;
+      --gold-deep:#D9A310;
+      --gold-soft:#FBD766;
+      --gold-ink:#8A6408;      /* readable gold on white */
+      --accent:#F4BC24;
+      --bg:#0C0C0E;            /* space black */
+      --bg-2:#0A0A0C;
+      --text:#F6F3EA;          /* warm white on black */
+      --text-dim:rgba(246,243,234,.66);
       --surface:#ffffff;
-      --surface-2:#F5F8FC;
-      --ink:#0E1520;
-      --ink-muted:#5D6A78;
-      --border:rgba(13,19,27,.12);
+      --surface-2:#FBFAF5;
+      --ink:#121014;
+      --ink-muted:#6A6558;
+      --border:rgba(18,16,20,.13);
       --ok-bg:#EAF6EE; --ok-ink:#1C6B3C; --ok-bd:#B7E2C6;
       --err-bg:#FDECEC; --err-ink:#8A1C1C; --err-bd:#F2C6C6;
       --radius:20px;
       --container:960px;
-      --shadow:0 20px 50px rgba(11,25,48,.28);
+      --shadow:0 24px 60px rgba(0,0,0,.55);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -38,9 +43,10 @@
       font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1100px 600px at 12% -8%, var(--blue-bright), transparent 60%),
-        radial-gradient(900px 620px at 100% 0%, #3C6AA8, transparent 55%),
-        linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+        radial-gradient(1000px 600px at 12% -10%, rgba(244,188,36,.18), transparent 58%),
+        radial-gradient(900px 640px at 100% 0%, rgba(244,188,36,.10), transparent 55%),
+        radial-gradient(700px 500px at 50% 120%, rgba(244,188,36,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       background-attachment:fixed;
       -webkit-font-smoothing:antialiased;
     }
@@ -50,15 +56,15 @@
     header{display:flex; align-items:center; gap:14px; margin-bottom:26px}
     .pfp{position:relative; flex:0 0 auto}
     .pfp .ring{position:absolute; inset:-6px; border-radius:999px;
-      background:conic-gradient(from 210deg, var(--accent), #ffffff55, var(--accent)); filter:blur(9px); opacity:.5}
-    .pfp img{position:relative; width:60px; height:60px; border-radius:50%; border:2px solid #fff; object-fit:cover; display:block; background:#dfe7f2}
+      background:conic-gradient(from 210deg, var(--gold), #ffffff33, var(--gold-soft), var(--gold)); filter:blur(10px); opacity:.75}
+    .pfp img{position:relative; width:60px; height:60px; border-radius:50%; border:2px solid var(--gold); object-fit:cover; display:block; background:#fff}
     .titles h1{font-size:20px; margin:0; font-weight:800; letter-spacing:.2px}
     .titles .tag{font-size:13px; color:var(--text-dim)}
     .follow{margin-left:auto}
     .follow a{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px;
-      text-decoration:none; color:#fff; font-weight:600; font-size:14px;
-      background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.28); transition:.2s}
-    .follow a:hover{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.5)}
+      text-decoration:none; color:var(--text); font-weight:600; font-size:14px;
+      background:rgba(244,188,36,.10); border:1px solid rgba(244,188,36,.40); transition:.2s}
+    .follow a:hover{background:rgba(244,188,36,.20); border-color:var(--gold); color:#fff}
 
     /* Hero */
     .hero{text-align:center; padding:8px 6px 6px}
@@ -96,17 +102,17 @@
       width:100%; padding:13px 14px; border-radius:12px; border:1px solid var(--border);
       background:#fff; color:var(--ink); font-size:16px; font-family:inherit; transition:.15s}
     input::placeholder{color:#9AA6B4}
-    input:focus{outline:none; border-color:var(--blue-bright); box-shadow:0 0 0 3px rgba(91,147,220,.25)}
+    input:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(244,188,36,.30)}
     .checkbox{display:flex; align-items:flex-start; gap:10px; margin-top:2px}
-    .checkbox input{width:18px; height:18px; margin-top:2px; accent-color:var(--blue); flex:0 0 auto}
+    .checkbox input{width:18px; height:18px; margin-top:2px; accent-color:var(--gold-deep); flex:0 0 auto}
     .checkbox label{font-weight:500; color:var(--ink-muted); margin:0; font-size:14px}
-    .checkbox a{color:var(--blue); font-weight:600}
+    .checkbox a{color:var(--gold-ink); font-weight:600}
 
     .btn{width:100%; margin-top:20px; padding:15px 16px; border:none; border-radius:12px; cursor:pointer;
-      font-family:inherit; font-size:16px; font-weight:700; color:#fff;
-      background:linear-gradient(180deg, var(--blue-bright), var(--blue)); box-shadow:0 8px 20px rgba(70,118,182,.4);
+      font-family:inherit; font-size:16px; font-weight:800; color:#181206; letter-spacing:.2px;
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold)); box-shadow:0 10px 24px rgba(244,188,36,.35);
       transition:transform .15s, box-shadow .15s, filter .15s}
-    .btn:hover{transform:translateY(-2px); filter:brightness(1.04); box-shadow:0 12px 26px rgba(70,118,182,.5)}
+    .btn:hover{transform:translateY(-2px); filter:brightness(1.05); box-shadow:0 14px 30px rgba(244,188,36,.5)}
     .btn[disabled]{opacity:.7; cursor:not-allowed; transform:none}
 
     .msg{display:none; margin:0 26px 26px; padding:16px 18px; border-radius:14px; font-size:15px}
@@ -216,7 +222,7 @@
       tagline:      "TechnoVolley '26 · turnir",
       instagram:    "https://www.instagram.com/planetcircle__/",
       formspree:    "https://formspree.io/f/mblynnep",
-      avatarUrl:    "https://raw.githubusercontent.com/Rupnik05/DJSETSV3/main/profile.jpeg"
+      avatarUrl:    "img/planet-circle.jpg"
     };
 
     document.addEventListener("DOMContentLoaded", () => {
