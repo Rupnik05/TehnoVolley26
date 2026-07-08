@@ -3,265 +3,338 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0C0C0E" />
+  <meta name="theme-color" content="#D4AA7D" />
   <title>TechnoVolley '26 — Prijava na odbojkarski turnir</title>
-  <meta name="description" content="Prijava na TechnoVolley '26 — odbojkarski turnir na mivki. Organizator: Planet Circle." />
+  <meta name="description" content="TechnoVolley '26 — turnir odbojke na mivki. 22. avgust, Športni park Budanje. Organizator: Planet Circle." />
   <meta property="og:title" content="TechnoVolley '26 — Prijava na turnir" />
-  <meta property="og:description" content="Odbojkarski turnir na mivki. Prijavi svojo ekipo!" />
+  <meta property="og:description" content="Turnir odbojke na mivki. 22. avgust — Športni park Budanje. Prijavi svojo ekipo!" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230C0C0E'/%3E%3Ccircle cx='50' cy='48' r='23' fill='none' stroke='%23F4BC24' stroke-width='7'/%3E%3Cellipse cx='50' cy='55' rx='40' ry='11' fill='none' stroke='%23F4BC24' stroke-width='7'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23272727'/%3E%3Ccircle cx='50' cy='47' r='22' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3Cellipse cx='50' cy='54' rx='38' ry='10' fill='none' stroke='%23D4AA7D' stroke-width='6'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      /* Planet Circle brand palette (sampled from logo) */
-      --gold:#F4BC24;
-      --gold-deep:#D9A310;
-      --gold-soft:#FBD766;
-      --gold-ink:#8A6408;      /* readable gold on white */
-      --accent:#F4BC24;
-      --bg:#0C0C0E;            /* space black */
-      --bg-2:#0A0A0C;
-      --text:#F6F3EA;          /* warm white on black */
-      --text-dim:rgba(246,243,234,.66);
-      --surface:#ffffff;
-      --surface-2:#FBFAF5;
-      --ink:#121014;
-      --ink-muted:#6A6558;
-      --border:rgba(18,16,20,.13);
-      --ok-bg:#EAF6EE; --ok-ink:#1C6B3C; --ok-bd:#B7E2C6;
-      --err-bg:#FDECEC; --err-ink:#8A1C1C; --err-bd:#F2C6C6;
-      --radius:20px;
-      --container:960px;
-      --shadow:0 24px 60px rgba(0,0,0,.55);
+      --sand:#D4AA7D;      /* Sandy Clay */
+      --grey:#272727;      /* Shadow Grey */
+      --paper:#F2EAD9;     /* warm off-white */
+      --line:rgba(39,39,39,.18);
+      --line-inv:rgba(212,170,125,.28);
+      --maxw:1180px;
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box; margin:0; padding:0}
     html{scroll-behavior:smooth}
     body{
-      margin:0; min-height:100%;
-      font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 12% -10%, rgba(244,188,36,.18), transparent 58%),
-        radial-gradient(900px 640px at 100% 0%, rgba(244,188,36,.10), transparent 55%),
-        radial-gradient(700px 500px at 50% 120%, rgba(244,188,36,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      background-attachment:fixed;
+      font-family:"Archivo", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      background:var(--sand);
+      color:var(--grey);
       -webkit-font-smoothing:antialiased;
+      line-height:1.5;
     }
-    .wrap{max-width:var(--container); margin:0 auto; padding:30px 18px 60px}
+    .display{font-family:"Archivo Black", "Archivo", sans-serif; font-weight:400}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    a{color:inherit}
 
-    /* Header */
-    header{display:flex; align-items:center; gap:14px; margin-bottom:26px}
-    .pfp{position:relative; flex:0 0 auto}
-    .pfp .ring{position:absolute; inset:-6px; border-radius:999px;
-      background:conic-gradient(from 210deg, var(--gold), #ffffff33, var(--gold-soft), var(--gold)); filter:blur(10px); opacity:.75}
-    .pfp img{position:relative; width:60px; height:60px; border-radius:50%; border:2px solid var(--gold); object-fit:cover; display:block; background:#fff}
-    .titles h1{font-size:20px; margin:0; font-weight:800; letter-spacing:.2px}
-    .titles .tag{font-size:13px; color:var(--text-dim)}
-    .follow{margin-left:auto}
-    .follow a{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px;
-      text-decoration:none; color:var(--text); font-weight:600; font-size:14px;
-      background:rgba(244,188,36,.10); border:1px solid rgba(244,188,36,.40); transition:.2s}
-    .follow a:hover{background:rgba(244,188,36,.20); border-color:var(--gold); color:#fff}
+    /* ── Nav ─────────────────────────── */
+    nav{border-bottom:1px solid var(--line)}
+    .nav-in{display:flex; align-items:center; gap:12px; padding:16px 0}
+    .nav-in img{width:42px; height:42px; border-radius:50%; background:#fff; border:1px solid var(--line); object-fit:cover}
+    .nav-name{font-weight:700; font-size:15px; letter-spacing:-.01em}
+    .nav-links{margin-left:auto; display:flex; align-items:center; gap:20px}
+    .nav-ig{font-weight:600; font-size:14px; text-decoration:none; opacity:.85}
+    .nav-ig:hover{opacity:1; text-decoration:underline; text-underline-offset:4px}
+    .pill{display:inline-block; background:var(--grey); color:var(--sand); text-decoration:none;
+      font-weight:700; font-size:14px; padding:11px 22px; border-radius:999px; transition:transform .15s}
+    .pill:hover{transform:scale(1.04)}
 
-    /* Hero */
-    .hero{text-align:center; padding:8px 6px 6px}
-    .eyebrow{display:inline-block; font-weight:700; letter-spacing:.22em; font-size:12px;
-      text-transform:uppercase; color:var(--accent); margin-bottom:10px}
-    .hero h2{font-size:clamp(30px, 6vw, 52px); line-height:1.04; margin:0 0 14px; font-weight:800}
-    .hero h2 .em{color:var(--accent)}
-    .lead{max-width:560px; margin:0 auto 22px; color:var(--text-dim); font-size:16px}
+    /* ── Hero ────────────────────────── */
+    .hero{padding:72px 0 64px; position:relative; overflow:hidden}
+    .eyebrow{font-size:13px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; margin-bottom:28px}
+    h1{font-size:clamp(64px, 14vw, 190px); line-height:.88; letter-spacing:-.015em; text-transform:uppercase}
+    h1 .row{display:block}
+    h1 .outline{color:transparent; -webkit-text-stroke:2.5px var(--grey); text-stroke:2.5px var(--grey)}
+    .hero-foot{display:flex; align-items:flex-end; gap:40px; margin-top:44px; flex-wrap:wrap}
+    .hero-sub{max-width:340px; font-size:17px; font-weight:500; line-height:1.55}
+    .hero-cta{display:inline-flex; align-items:center; gap:12px; background:var(--grey); color:var(--sand);
+      text-decoration:none; font-weight:700; font-size:17px; padding:18px 34px; border-radius:999px; transition:transform .15s}
+    .hero-cta:hover{transform:scale(1.04)}
+    .hero-cta .arr{transition:transform .2s}
+    .hero-cta:hover .arr{transform:translateX(4px)}
+    .hero-open{font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; display:flex; align-items:center; gap:8px}
+    .dot{width:9px; height:9px; border-radius:50%; background:var(--grey); animation:blink 1.6s ease-in-out infinite}
+    @keyframes blink{50%{opacity:.25}}
 
-    .chips{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:22px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px;
-      background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22); font-size:14px; font-weight:500}
-    .chip svg{opacity:.9}
+    /* volleyball line art */
+    .ball{position:absolute; right:-140px; top:40px; width:min(46vw,520px); height:auto; opacity:.9;
+      animation:spin 60s linear infinite; pointer-events:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* Countdown */
-    .countdown{display:flex; gap:10px; justify-content:center; margin:6px auto 30px; flex-wrap:wrap}
-    .cd-box{min-width:76px; padding:12px 10px; border-radius:16px; background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.20)}
-    .cd-num{font-size:30px; font-weight:800; line-height:1; font-variant-numeric:tabular-nums}
-    .cd-lab{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--text-dim); margin-top:6px}
-    .cd-live{grid-column:1/-1; font-weight:700; color:var(--accent)}
+    /* ── Ticker ──────────────────────── */
+    .ticker{background:var(--grey); color:var(--sand); overflow:hidden; white-space:nowrap; border-block:1px solid var(--grey)}
+    .ticker-track{display:inline-flex; padding:14px 0; animation:marquee 28s linear infinite}
+    .ticker span{font-family:"Archivo Black",sans-serif; font-size:15px; letter-spacing:.12em; text-transform:uppercase; padding:0 18px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
 
-    /* Card */
-    .card{background:linear-gradient(180deg, var(--surface), var(--surface-2));
-      border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
-    .card-head{padding:24px 26px 4px; color:var(--ink); text-align:center}
-    .card-head h3{margin:0 0 6px; font-size:22px; font-weight:800}
-    .card-head p{margin:0; color:var(--ink-muted); font-size:14px}
+    /* ── Info (paper) ────────────────── */
+    .info{background:var(--paper); padding:96px 0}
+    .kicker{font-size:13px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; margin-bottom:56px}
+    .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line)}
+    .fact{padding:36px 28px 44px; border-bottom:1px solid var(--line)}
+    .fact + .fact{border-left:1px solid var(--line)}
+    .fact .num{font-family:"Archivo Black",sans-serif; font-size:15px; margin-bottom:26px; color:var(--grey); opacity:.45}
+    .fact h3{font-family:"Archivo Black",sans-serif; font-size:26px; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:12px}
+    .fact p{font-size:16px; font-weight:500; opacity:.75; max-width:26ch}
 
-    form{padding:20px 26px 26px; color:var(--ink)}
-    .grid{display:grid; gap:14px; grid-template-columns:1fr 1fr}
-    .grid .full{grid-column:1/-1}
-    label{display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:7px}
+    /* ── Countdown (grey) ────────────── */
+    .count{background:var(--grey); color:var(--sand); padding:96px 0; text-align:center}
+    .count .kicker{margin-bottom:40px}
+    .cd{display:flex; justify-content:center; align-items:baseline; gap:clamp(10px,3vw,34px); flex-wrap:wrap}
+    .cd .n{font-family:"Archivo Black",sans-serif; font-size:clamp(58px,11vw,150px); line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+    .cd .l{display:block; font-family:"Archivo",sans-serif; font-size:12px; font-weight:600; letter-spacing:.3em; text-transform:uppercase; margin-top:14px; opacity:.6}
+    .cd .sep{font-family:"Archivo Black",sans-serif; font-size:clamp(40px,8vw,110px); opacity:.35; transform:translateY(-8px)}
+    .cd-live{font-family:"Archivo Black",sans-serif; font-size:clamp(30px,6vw,64px); text-transform:uppercase}
+
+    /* ── Form (sand) ─────────────────── */
+    .reg{padding:96px 0 110px}
+    .reg-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:start}
+    .reg h2{font-family:"Archivo Black",sans-serif; font-size:clamp(40px,6vw,72px); line-height:.95; text-transform:uppercase; letter-spacing:-.015em; margin:18px 0 22px}
+    .reg-side p{font-size:17px; font-weight:500; max-width:36ch; opacity:.8}
+    .reg-side .ring{margin-top:44px; width:120px; height:auto; opacity:.85}
+
+    form{border:1px solid var(--grey); border-radius:20px; padding:36px; background:var(--sand)}
+    .field{margin-bottom:26px}
+    label{display:block; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:10px}
     input[type=text], input[type=email], input[type=tel]{
-      width:100%; padding:13px 14px; border-radius:12px; border:1px solid var(--border);
-      background:#fff; color:var(--ink); font-size:16px; font-family:inherit; transition:.15s}
-    input::placeholder{color:#9AA6B4}
-    input:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(244,188,36,.30)}
-    .checkbox{display:flex; align-items:flex-start; gap:10px; margin-top:2px}
-    .checkbox input{width:18px; height:18px; margin-top:2px; accent-color:var(--gold-deep); flex:0 0 auto}
-    .checkbox label{font-weight:500; color:var(--ink-muted); margin:0; font-size:14px}
-    .checkbox a{color:var(--gold-ink); font-weight:600}
+      width:100%; background:transparent; border:none; border-bottom:2px solid var(--grey);
+      padding:8px 2px 12px; font-size:19px; font-weight:600; font-family:inherit; color:var(--grey); border-radius:0}
+    input::placeholder{color:rgba(39,39,39,.38)}
+    input:focus{outline:none; border-bottom-color:#000}
+    .check{display:flex; gap:12px; align-items:flex-start; margin:32px 0 8px}
+    .check input{width:19px; height:19px; margin-top:2px; accent-color:var(--grey); flex:0 0 auto}
+    .check label{font-size:14px; font-weight:500; letter-spacing:0; text-transform:none; margin:0; line-height:1.5}
+    .btn{width:100%; margin-top:18px; background:var(--grey); color:var(--sand); border:none; cursor:pointer;
+      font-family:"Archivo Black",sans-serif; font-size:17px; letter-spacing:.04em; text-transform:uppercase;
+      padding:20px; border-radius:999px; transition:transform .15s}
+    .btn:hover{transform:scale(1.02)}
+    .btn[disabled]{opacity:.6; cursor:not-allowed; transform:none}
+    .msg{display:none; margin-top:22px; border:1px solid var(--grey); border-radius:14px; padding:18px 20px; font-size:15px; font-weight:600}
+    .msg.err{background:#3a1414; color:#f2c6c6; border-color:#3a1414}
+    .msg.ok{background:var(--grey); color:var(--sand)}
 
-    .btn{width:100%; margin-top:20px; padding:15px 16px; border:none; border-radius:12px; cursor:pointer;
-      font-family:inherit; font-size:16px; font-weight:800; color:#181206; letter-spacing:.2px;
-      background:linear-gradient(180deg, var(--gold-soft), var(--gold)); box-shadow:0 10px 24px rgba(244,188,36,.35);
-      transition:transform .15s, box-shadow .15s, filter .15s}
-    .btn:hover{transform:translateY(-2px); filter:brightness(1.05); box-shadow:0 14px 30px rgba(244,188,36,.5)}
-    .btn[disabled]{opacity:.7; cursor:not-allowed; transform:none}
+    /* ── Footer ──────────────────────── */
+    footer{background:var(--grey); color:var(--sand); padding:56px 0}
+    .foot-in{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+    .foot-in img{width:44px; height:44px; border-radius:50%; background:#fff}
+    .foot-brand{font-family:"Archivo Black",sans-serif; font-size:16px; text-transform:uppercase; letter-spacing:.04em}
+    .foot-right{margin-left:auto; display:flex; gap:24px; align-items:center; font-size:14px; font-weight:600}
+    .foot-right a{text-decoration:none; opacity:.85}
+    .foot-right a:hover{opacity:1; text-decoration:underline; text-underline-offset:4px}
+    .foot-copy{opacity:.55}
 
-    .msg{display:none; margin:0 26px 26px; padding:16px 18px; border-radius:14px; font-size:15px}
-    .msg.ok{background:var(--ok-bg); color:var(--ok-ink); border:1px solid var(--ok-bd)}
-    .msg.err{background:var(--err-bg); color:var(--err-ink); border:1px solid var(--err-bd)}
+    .hp{position:absolute!important; left:-9999px!important; width:1px!important; height:1px!important; overflow:hidden!important}
+    a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--grey); outline-offset:3px}
+    .count a:focus-visible, footer a:focus-visible{outline-color:var(--sand)}
 
-    .foot{margin-top:30px; text-align:center; color:var(--text-dim); font-size:13px}
-
-    /* Honeypot */
-    .hp{position:absolute!important; left:-10000px!important; width:1px!important; height:1px!important; overflow:hidden!important}
-
-    a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-
-    @media (max-width:640px){
-      header{flex-wrap:wrap}
-      .follow{margin-left:auto}
-      .grid{grid-template-columns:1fr}
-      form, .card-head{padding-left:18px; padding-right:18px}
-      .msg{margin-left:18px; margin-right:18px}
-      .cd-box{min-width:64px}
-      .cd-num{font-size:24px}
+    @media (prefers-reduced-motion: reduce){
+      .ball, .ticker-track, .dot{animation:none}
+    }
+    @media (max-width:900px){
+      .ball{right:-30vw; top:auto; bottom:-60px; width:74vw; opacity:.4}
+      .reg-grid{grid-template-columns:1fr; gap:40px}
+      .reg-side .ring{display:none}
+    }
+    @media (max-width:700px){
+      .facts{grid-template-columns:1fr}
+      .fact + .fact{border-left:none}
+    }
+    @media (max-width:560px){
+      .hero{padding:56px 0 48px}
+      .nav-ig{display:none}
+      form{padding:26px 20px}
+      .hero-foot{gap:26px}
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="pfp"><div class="ring"></div><img id="avatar" alt="Planet Circle" referrerpolicy="no-referrer" /></div>
-      <div class="titles">
-        <h1 id="displayName">planetcircle__</h1>
-        <div class="tag" id="tagline">TechnoVolley · turnir</div>
+
+  <nav>
+    <div class="container nav-in">
+      <img id="navLogo" src="img/planet-circle.jpg" alt="Planet Circle logo" />
+      <span class="nav-name" id="navName">planetcircle__</span>
+      <div class="nav-links">
+        <a class="nav-ig" id="igLinkTop" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+        <a class="pill" href="#prijava">Prijava</a>
       </div>
-      <div class="follow">
-        <a id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
-          Sledi
-        </a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <!-- volleyball line art -->
+    <svg class="ball" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="97" stroke="#272727" stroke-width="2.5"/>
+      <path d="M100 3c0 64-43 118-97 134" stroke="#272727" stroke-width="2.5"/>
+      <path d="M100 3c0 64 43 118 97 134" stroke="#272727" stroke-width="2.5"/>
+      <path d="M6 74c56 22 132 22 188 0" stroke="#272727" stroke-width="2.5"/>
+      <path d="M100 3v66" stroke="#272727" stroke-width="2.5"/>
+    </svg>
+
+    <div class="container">
+      <p class="eyebrow">Planet Circle predstavlja</p>
+      <h1 class="display">
+        <span class="row">Techno</span>
+        <span class="row">Volley</span>
+        <span class="row outline" id="yearBig">'26</span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-sub">Turnir odbojke na mivki. Zberi ekipo in se nam pridruži na najbolj vročem dogodku poletja.</p>
+        <a class="hero-cta" href="#prijava">Prijavi ekipo <span class="arr">→</span></a>
+        <span class="hero-open"><span class="dot"></span> Prijave odprte</span>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero">
-      <span class="eyebrow">Planet Circle predstavlja</span>
-      <h2>Odbojkarski turnir <span class="em">'26</span></h2>
-      <p class="lead">Zberi ekipo, obleci copate za mivko in se nam pridruži na najbolj vročem dogodku poletja. Prijave so odprte!</p>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
 
-      <div class="chips">
-        <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg><span id="chipDate">22. avgust 2026</span></span>
-        <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span id="chipLoc">Športni park Budanje — mivka</span></span>
-        <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.6-1-1.7-1.5-3-1.5-1.8 0-3 .9-3 2.3 0 3 6 1.5 6 4.4 0 1.4-1.3 2.3-3 2.3-1.3 0-2.5-.6-3-1.6M12 6v12"/></svg><span id="chipFee">30 € / ekipa</span></span>
+  <section class="info">
+    <div class="container">
+      <p class="kicker">Vse, kar moraš vedeti</p>
+      <div class="facts">
+        <div class="fact">
+          <div class="num">01</div>
+          <h3 id="factDate">22. avgust 2026</h3>
+          <p>Sobota. Začetek ob 9.00 — pridi vsaj pol ure prej.</p>
+        </div>
+        <div class="fact">
+          <div class="num">02</div>
+          <h3 id="factLoc">Športni park Budanje</h3>
+          <p>Igrišče za odbojko na mivki. Parkirišče ob parku.</p>
+        </div>
+        <div class="fact">
+          <div class="num">03</div>
+          <h3 id="factFee">30 € na ekipo</h3>
+          <p>Navodila za plačilo prijavnine prejmeš na e‑pošto po prijavi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="count">
+    <div class="container">
+      <p class="kicker">Do prvega servisa</p>
+      <div class="cd" id="countdown"></div>
+    </div>
+  </section>
+
+  <section class="reg" id="prijava">
+    <div class="container reg-grid">
+      <div class="reg-side">
+        <p class="kicker" style="margin-bottom:0">Prijava</p>
+        <h2>Prijavi svojo ekipo</h2>
+        <p>Izpolni obrazec — po oddaji ti na e‑pošto pošljemo potrditev in navodila za plačilo prijavnine.</p>
+        <!-- planet ring motif -->
+        <svg class="ring" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="60" cy="38" r="26" stroke="#272727" stroke-width="2.5"/>
+          <ellipse cx="60" cy="44" rx="54" ry="14" stroke="#272727" stroke-width="2.5"/>
+        </svg>
       </div>
 
-      <div class="countdown" id="countdown" aria-label="Odštevanje do turnirja"></div>
-    </section>
+      <div>
+        <form id="regForm" action="https://formspree.io/f/mblynnep" method="POST">
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="_subject" value="Prijava na turnir — TechnoVolley '26" />
 
-    <article class="card">
-      <div class="card-head">
-        <h3>Prijavi svojo ekipo</h3>
-        <p>Izpolni obrazec — po oddaji prejmeš potrditev in navodila za plačilo prijavnine na e‑pošto.</p>
-      </div>
-      <form id="regForm" action="https://formspree.io/f/mblynnep" method="POST">
-        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <input type="hidden" name="_subject" value="Prijava na turnir — TechnoVolley '26" />
-
-        <div class="grid">
-          <div class="full">
+          <div class="field">
             <label for="team">Ime ekipe</label>
             <input id="team" name="Ime ekipe" type="text" required autocomplete="organization" placeholder="npr. Planet Circle" />
           </div>
-          <div>
+          <div class="field">
             <label for="captain">Kapetan — ime in priimek</label>
             <input id="captain" name="Kapetan" type="text" required autocomplete="name" placeholder="Ime Priimek" />
           </div>
-          <div>
-            <label for="email">E‑pošta kapetana</label>
+          <div class="field">
+            <label for="email">E-pošta kapetana</label>
             <input id="email" name="E-posta" type="email" required autocomplete="email" placeholder="ime@primer.si" />
           </div>
-          <div class="full">
+          <div class="field">
             <label for="phone">Telefon kapetana</label>
             <input id="phone" name="Telefon" type="tel" required inputmode="tel" autocomplete="tel" placeholder="040 123 456" />
           </div>
-          <div class="full checkbox">
+          <div class="check">
             <input id="rules" name="Strinjanje s pravili" type="checkbox" value="Da" required />
             <label for="rules">Strinjam se s pravili turnirja in obdelavo podatkov za namen prijave.</label>
           </div>
-        </div>
+          <button class="btn" type="submit">Prijavi ekipo →</button>
+        </form>
+        <div class="msg ok" id="okMsg">Hvala za prijavo! ✅ V kratkem boste na e‑pošto prejeli potrditev in navodila za plačilo prijavnine. Se vidimo na mivki!</div>
+        <div class="msg err" id="errMsg">Pri oddaji je prišlo do napake. Poskusite znova ali nam pišite na Instagramu.</div>
+      </div>
+    </div>
+  </section>
 
-        <button class="btn" type="submit">Prijavi ekipo →</button>
-      </form>
-
-      <div class="msg ok" id="okMsg">Hvala za prijavo! ✅ V kratkem boste na e‑pošto prejeli potrditev in navodila za plačilo prijavnine. Se vidimo na igrišču!</div>
-      <div class="msg err" id="errMsg">Pri oddaji je prišlo do napake. Poskusite znova ali nam pišite na Instagramu.</div>
-    </article>
-
-    <div class="foot">© <span id="year">2026</span> Planet Circle — Vse pravice pridržane.</div>
-  </div>
+  <footer>
+    <div class="container foot-in">
+      <img src="img/planet-circle.jpg" alt="" />
+      <span class="foot-brand">Planet Circle</span>
+      <div class="foot-right">
+        <a id="igLinkFoot" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+        <span class="foot-copy">© <span id="year">2026</span> Planet Circle</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
     /* ─────────────────────────────────────────────
        NASTAVITVE — spremeni samo te vrstice vsako leto
        ───────────────────────────────────────────── */
     const CONFIG = {
-      eventDateISO: "2026-08-22T09:00:00+02:00", // datum in ura turnirja
+      eventDateISO: "2026-08-22T09:00:00+02:00",
       dateLabel:    "22. avgust 2026",
-      location:     "Športni park Budanje — mivka",
-      fee:          "30 € / ekipa",
-      displayName:  "planetcircle__",
-      tagline:      "TechnoVolley '26 · turnir",
+      location:     "Športni park Budanje",
+      fee:          "30 € na ekipo",
+      yearShort:    "'26",
       instagram:    "https://www.instagram.com/planetcircle__/",
       formspree:    "https://formspree.io/f/mblynnep",
-      avatarUrl:    "img/planet-circle.jpg"
+      ticker: ["TechnoVolley '26", "22. avgust", "Športni park Budanje", "Odbojka na mivki", "30 € na ekipo"]
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Fill dynamic bits from CONFIG
-      document.getElementById("displayName").textContent = CONFIG.displayName;
-      document.getElementById("tagline").textContent = CONFIG.tagline;
-      document.getElementById("igLink").href = CONFIG.instagram;
-      document.getElementById("chipDate").textContent = CONFIG.dateLabel;
-      document.getElementById("chipLoc").textContent = CONFIG.location;
-      document.getElementById("chipFee").textContent = CONFIG.fee;
+      document.getElementById("igLinkTop").href = CONFIG.instagram;
+      document.getElementById("igLinkFoot").href = CONFIG.instagram;
+      document.getElementById("factDate").textContent = CONFIG.dateLabel;
+      document.getElementById("factLoc").textContent = CONFIG.location;
+      document.getElementById("factFee").textContent = CONFIG.fee;
+      document.getElementById("yearBig").textContent = CONFIG.yearShort;
       document.getElementById("year").textContent = new Date(CONFIG.eventDateISO).getFullYear();
 
-      const avatar = document.getElementById("avatar");
-      avatar.src = CONFIG.avatarUrl;
-      avatar.onerror = () => { avatar.style.display = "none"; };
-
-      const form = document.getElementById("regForm");
-      form.setAttribute("action", CONFIG.formspree);
+      // Ticker: build one sequence, duplicate for seamless loop
+      const seq = CONFIG.ticker.map(t => `<span>${t}</span><span>✦</span>`).join("");
+      document.getElementById("tickerTrack").innerHTML = seq + seq;
 
       // Countdown
       const cdEl = document.getElementById("countdown");
       const target = new Date(CONFIG.eventDateISO).getTime();
-      const units = [["dni","d"],["ur","h"],["min","m"],["sek","s"]];
+      const labels = ["dni","ur","min","sek"];
       function render(){
         const diff = target - Date.now();
-        if (diff <= 0){ cdEl.innerHTML = '<div class="cd-box cd-live">Turnir je v teku — se vidimo! 🏐</div>'; return true; }
-        const d = Math.floor(diff/864e5);
-        const h = Math.floor(diff/36e5)%24;
-        const m = Math.floor(diff/6e4)%60;
-        const s = Math.floor(diff/1e3)%60;
-        const vals = [d,h,m,s];
-        cdEl.innerHTML = units.map((u,i)=>
-          `<div class="cd-box"><div class="cd-num">${String(vals[i]).padStart(2,"0")}</div><div class="cd-lab">${u[0]}</div></div>`
+        if (diff <= 0){ cdEl.innerHTML = '<div class="cd-live">Turnir je v teku 🏐</div>'; return true; }
+        const v = [
+          Math.floor(diff/864e5),
+          Math.floor(diff/36e5)%24,
+          Math.floor(diff/6e4)%60,
+          Math.floor(diff/1e3)%60
+        ];
+        cdEl.innerHTML = v.map((n,i)=>
+          `<div><span class="n">${String(n).padStart(2,"0")}</span><span class="l">${labels[i]}</span></div>${i<3?'<span class="sep">:</span>':''}`
         ).join("");
         return false;
       }
       if(!render()){ const t = setInterval(()=>{ if(render()) clearInterval(t); }, 1000); }
 
-      // Submit via Formspree (AJAX, stay on page)
+      // Form submit (Formspree AJAX)
+      const form = document.getElementById("regForm");
+      form.setAttribute("action", CONFIG.formspree);
       const okMsg = document.getElementById("okMsg");
       const errMsg = document.getElementById("errMsg");
       const btn = form.querySelector('button[type="submit"]');
@@ -269,19 +342,18 @@
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         okMsg.style.display = "none"; errMsg.style.display = "none";
-        if (form.querySelector('input[name="website"]').value) return; // honeypot -> bot
+        if (form.querySelector('input[name="website"]').value) return; // honeypot
 
         btn.disabled = true; const label = btn.textContent; btn.textContent = "Pošiljam…";
         try{
           const res = await fetch(form.action, {
-            method: "POST",
-            headers: { "Accept": "application/json" },
-            body: new FormData(form)
+            method:"POST",
+            headers:{ "Accept":"application/json" },
+            body:new FormData(form)
           });
           if (res.ok){
             form.style.display = "none";
             okMsg.style.display = "block";
-            window.scrollTo({ top: 0, behavior: "smooth" });
           } else {
             const data = await res.json().catch(()=>({}));
             errMsg.textContent = (data.errors && data.errors.map(x=>x.message).join(", ")) ||
